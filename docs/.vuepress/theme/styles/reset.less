@@ -1,0 +1,53 @@
+input,
+textarea,
+button,
+select,
+a {
+    outline: 0 none;
+    border : none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    padding: 0;
+    border : 0
+}
+
+audio,
+canvas,
+video {
+    display : inline-block;
+    *display: inline;
+    *zoom   : 1
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "\0020"
+}
+
+textarea {
+    overflow: auto;
+    resize  : vertical
+}
+
+a,
+a:link,
+a:hover,
+a:active,
+a:visited,
+ins,
+s,
+u,
+del {
+    text-decoration: none
+}
+
+hr {
+    height    : .02rem;
+    margin    : .1rem 0;
+    border    : medium none;
+    border-top: .02rem solid #cacaca;
+}
