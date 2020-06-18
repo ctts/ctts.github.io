@@ -19,6 +19,8 @@ sidebar: auto
 
 [浏览器渲染原理](https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/#Introduction)
 
+[深入浅出 Webpack](https://webpack.wuhaolin.cn/5%E5%8E%9F%E7%90%86/5-4%E7%BC%96%E5%86%99Plugin.html?q=)
+
 ## 优秀工具网站分享
 
 

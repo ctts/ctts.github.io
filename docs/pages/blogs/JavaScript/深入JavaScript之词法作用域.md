@@ -1,6 +1,7 @@
-![woman-s-face-with-light-reflections-3431494](D:\新桌面\woman-s-face-with-light-reflections-3431494.jpg)
 
-# 深入JavaScript之-词法作用域
+# 深入JavaScript之词法作用域
+<img src="https://s1.ax1x.com/2020/05/13/Ywd7dg.jpg" alt="Ywd7dg.jpg" border="0" />
+
 
 ## 前言
 

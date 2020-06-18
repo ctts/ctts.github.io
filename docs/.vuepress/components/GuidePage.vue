@@ -37,12 +37,12 @@ export default {
         img: 'https://s1.ax1x.com/2020/03/24/8qEgaR.jpg',
         link: '/pages/Share/',
         Content: '站在巨人的肩膀上',
-        title: '分享'
+        title: '工具分享'
       }, {
         img: 'https://s1.ax1x.com/2020/03/24/8qEWPx.jpg',
-        link: '/',
-        Content: '人生不仅仅是技术',
-        title: '生活'
+        link: '/pages/Article/',
+        Content: '交流才能进步',
+        title: '文章分享'
       }]
     }
   }

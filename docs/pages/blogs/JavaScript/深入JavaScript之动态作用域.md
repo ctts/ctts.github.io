@@ -1,6 +1,6 @@
+# 深入JavaScript之从ES规范理解动态作用域（this）
 <img src="https://s1.ax1x.com/2020/03/18/8DkhKP.jpg" alt="8DkhKP.jpg" border="0" />
 
-# 深入JavaScript之-从ES规范理解动态作用域（this）
 
 ## 前言
 
