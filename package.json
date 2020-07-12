@@ -14,9 +14,11 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "docs:cache": "vuepress dev docs --cache .cache",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs",
+    "deploy":"start deploy.sh"
   },
   "dependencies": {
+    "@babel/compat-data": "^7.10.4",
     "less": "^3.11.1",
     "vue-long-ripple": "^1.0.5"
   }
