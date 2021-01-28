@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript设计模式——观察者模式和发布订阅模式 | 参天桃树的博客</title>
+    <meta name="description" content="前端学习">
+    <meta name="generator" content="VuePress 1.3.1">
+    <link rel="icon" href="/logo.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/logo.png">
+  <link rel="mask-icon" href="/logo.png" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.25f7d7fa.css" as="style"><link rel="preload" href="/assets/js/app.edf28d47.js" as="script"><link rel="preload" href="/assets/js/2.4ef6d935.js" as="script"><link rel="preload" href="/assets/js/66.0e57b57e.js" as="script"><link rel="preload" href="/assets/js/5.03abf982.js" as="script"><link rel="prefetch" href="/assets/js/10.e01bd81c.js"><link rel="prefetch" href="/assets/js/11.4afa66d2.js"><link rel="prefetch" href="/assets/js/12.27402237.js"><link rel="prefetch" href="/assets/js/13.4c78e05f.js"><link rel="prefetch" href="/assets/js/14.0e25cfa1.js"><link rel="prefetch" href="/assets/js/15.b57e640d.js"><link rel="prefetch" href="/assets/js/16.d24a6c01.js"><link rel="prefetch" href="/assets/js/17.08807177.js"><link rel="prefetch" href="/assets/js/18.ccd27d89.js"><link rel="prefetch" href="/assets/js/19.77a1c508.js"><link rel="prefetch" href="/assets/js/20.6634559a.js"><link rel="prefetch" href="/assets/js/21.ca3229d4.js"><link rel="prefetch" href="/assets/js/22.034dd950.js"><link rel="prefetch" href="/assets/js/23.5b932710.js"><link rel="prefetch" href="/assets/js/24.7b9be274.js"><link rel="prefetch" href="/assets/js/25.f4d8458a.js"><link rel="prefetch" href="/assets/js/26.15c95386.js"><link rel="prefetch" href="/assets/js/27.8c8ee964.js"><link rel="prefetch" href="/assets/js/28.90fc886a.js"><link rel="prefetch" href="/assets/js/29.20a5644d.js"><link rel="prefetch" href="/assets/js/3.74bfc25e.js"><link rel="prefetch" href="/assets/js/30.f65d833c.js"><link rel="prefetch" href="/assets/js/31.12ac6fa0.js"><link rel="prefetch" href="/assets/js/32.ebd45b60.js"><link rel="prefetch" href="/assets/js/33.98520712.js"><link rel="prefetch" href="/assets/js/34.07f0ffa1.js"><link rel="prefetch" href="/assets/js/35.f1249471.js"><link rel="prefetch" href="/assets/js/36.a6d2b700.js"><link rel="prefetch" href="/assets/js/37.e4e5625c.js"><link rel="prefetch" href="/assets/js/38.3777bcb4.js"><link rel="prefetch" href="/assets/js/39.3e401e37.js"><link rel="prefetch" href="/assets/js/4.426aadd5.js"><link rel="prefetch" href="/assets/js/40.10f0583d.js"><link rel="prefetch" href="/assets/js/41.b396daed.js"><link rel="prefetch" href="/assets/js/42.b765a524.js"><link rel="prefetch" href="/assets/js/43.b86d742f.js"><link rel="prefetch" href="/assets/js/44.4126af4c.js"><link rel="prefetch" href="/assets/js/45.e194d9df.js"><link rel="prefetch" href="/assets/js/46.9d7acdff.js"><link rel="prefetch" href="/assets/js/47.480c56ee.js"><link rel="prefetch" href="/assets/js/48.1597ebb2.js"><link rel="prefetch" href="/assets/js/49.5478b9e5.js"><link rel="prefetch" href="/assets/js/50.313af1c3.js"><link rel="prefetch" href="/assets/js/51.921ab1ab.js"><link rel="prefetch" href="/assets/js/52.f5a9450f.js"><link rel="prefetch" href="/assets/js/53.8f7435f8.js"><link rel="prefetch" href="/assets/js/54.9045b13e.js"><link rel="prefetch" href="/assets/js/55.541a10ac.js"><link rel="prefetch" href="/assets/js/56.4caa35e3.js"><link rel="prefetch" href="/assets/js/57.06fd5ab7.js"><link rel="prefetch" href="/assets/js/58.8d4f9fd7.js"><link rel="prefetch" href="/assets/js/59.4f366807.js"><link rel="prefetch" href="/assets/js/6.70e2acd4.js"><link rel="prefetch" href="/assets/js/60.b1095e74.js"><link rel="prefetch" href="/assets/js/61.8257724b.js"><link rel="prefetch" href="/assets/js/62.ad94bd6f.js"><link rel="prefetch" href="/assets/js/63.c99ba3c8.js"><link rel="prefetch" href="/assets/js/64.b3edfbdb.js"><link rel="prefetch" href="/assets/js/65.0b71e6e9.js"><link rel="prefetch" href="/assets/js/67.7e7020f2.js"><link rel="prefetch" href="/assets/js/68.13ac41db.js"><link rel="prefetch" href="/assets/js/69.a9531cba.js"><link rel="prefetch" href="/assets/js/7.f0104c50.js"><link rel="prefetch" href="/assets/js/70.311a23aa.js"><link rel="prefetch" href="/assets/js/71.6ccff4d3.js"><link rel="prefetch" href="/assets/js/72.91e667a0.js"><link rel="prefetch" href="/assets/js/73.46641548.js"><link rel="prefetch" href="/assets/js/74.1f92351e.js"><link rel="prefetch" href="/assets/js/75.83f5aeb6.js"><link rel="prefetch" href="/assets/js/76.f8b2512b.js"><link rel="prefetch" href="/assets/js/77.7f261c27.js"><link rel="prefetch" href="/assets/js/78.1261239b.js"><link rel="prefetch" href="/assets/js/79.50a0eb7b.js"><link rel="prefetch" href="/assets/js/8.8ac9850f.js"><link rel="prefetch" href="/assets/js/80.a7bc59c8.js"><link rel="prefetch" href="/assets/js/81.b54b6ac1.js"><link rel="prefetch" href="/assets/js/82.c78575e0.js"><link rel="prefetch" href="/assets/js/83.bbb61f72.js"><link rel="prefetch" href="/assets/js/84.291ab932.js"><link rel="prefetch" href="/assets/js/85.a88120e1.js"><link rel="prefetch" href="/assets/js/86.8f5ea5c1.js"><link rel="prefetch" href="/assets/js/87.70031702.js"><link rel="prefetch" href="/assets/js/88.0df6111e.js"><link rel="prefetch" href="/assets/js/89.da1becad.js"><link rel="prefetch" href="/assets/js/9.1ee351c7.js"><link rel="prefetch" href="/assets/js/90.ad8d5348.js"><link rel="prefetch" href="/assets/js/91.59c85307.js"><link rel="prefetch" href="/assets/js/92.556598de.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.25f7d7fa.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="global-layout" data-v-1660a4d0><div class="bg" data-v-be1b9d22 data-v-1660a4d0><canvas data-v-be1b9d22></canvas></div> <div class="theme-container test" data-v-1660a4d0><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="参天桃树的博客" class="logo"> <span class="site-name can-hide">参天桃树的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><span class="title">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/blogs/Daily/20210128.html" class="nav-link">
+  日常笔记
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/JavaScript/面试题集合.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/CSS/多行文本省略号.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Vue/手把手教你实现一个移动端canvas签名模块.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Design/观察者模式和发布订阅模式.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  分类
+</a></div><div class="nav-item"><a href="/pages/Share/" class="nav-link">
+  优秀工具分享
+</a></div><div class="nav-item"><a href="/pages/article/" class="nav-link">
+  优秀文章分享
+</a></div><div class="nav-item"><a href="https://github.com/ctts" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><span class="title">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/blogs/Daily/20210128.html" class="nav-link">
+  日常笔记
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/JavaScript/面试题集合.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/CSS/多行文本省略号.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Vue/手把手教你实现一个移动端canvas签名模块.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Design/观察者模式和发布订阅模式.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  分类
+</a></div><div class="nav-item"><a href="/pages/Share/" class="nav-link">
+  优秀工具分享
+</a></div><div class="nav-item"><a href="/pages/article/" class="nav-link">
+  优秀文章分享
+</a></div><div class="nav-item"><a href="https://github.com/ctts" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>设计模式</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/blogs/Design/观察者模式和发布订阅模式.html" class="active sidebar-link">JavaScript设计模式——观察者模式和发布订阅模式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/blogs/Design/观察者模式和发布订阅模式.html#观察者模式" class="sidebar-link">观察者模式</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/Design/观察者模式和发布订阅模式.html#发布订阅模式" class="sidebar-link">发布订阅模式</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/Design/观察者模式和发布订阅模式.html#两者区别" class="sidebar-link">两者区别</a></li></ul></li><li><a href="/pages/blogs/Design/状态模式.html" class="sidebar-link">JavaScript设计模式——状态模式</a></li><li><a href="/pages/blogs/Design/工厂模式.html" class="sidebar-link">JavaScript设计模式——工厂模式</a></li><li><a href="/pages/blogs/Design/外观模式.html" class="sidebar-link">JavaScript设计模式——外观模式</a></li><li><a href="/pages/blogs/Design/原型模式.html" class="sidebar-link">JavaScript设计模式——原型模式</a></li><li><a href="/pages/blogs/Design/单例模式.html" class="sidebar-link">JavaScript设计模式——单例模式</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="javascript设计模式-观察者模式和发布订阅模式"><a href="#javascript设计模式-观察者模式和发布订阅模式" class="header-anchor">#</a> JavaScript设计模式——观察者模式和发布订阅模式</h1> <img src="https://s1.ax1x.com/2020/06/06/t6VQTU.jpg" width="100%" alt="t6VQTU.jpg" border="0"> <p>观察者模式和发布订阅模式是日常设计和开发时常用到的概念。两者<strong>一开始是同一概念</strong>，但是随着模式发展，两者逐渐独立成为了<strong>独立的</strong>设计模式。</p> <p>统一定义：</p> <p>当对象之间存在 一对一 或 一对多 的依赖关系时，当一发生改变，所有<strong>依赖该对象</strong>的其他对象都能接收到<strong>变化通知</strong>，并执行回调。</p> <h2 id="观察者模式"><a href="#观察者模式" class="header-anchor">#</a> 观察者模式</h2> <p>单从定义上我们很难理解，我们可以从实际出发，去理解。以我们最日常的 <strong>直播</strong> 为例。</p> <p><strong>S(Situation)</strong> ：在某直播平台，我发现了一个喜爱的主播，我想要每次他上线时就去看他直播。</p> <p><strong>T(Target)</strong>：我想要每次他上线时就立刻去看他直播或提醒我前往</p> <p><strong>A(Action)</strong>：我们有三种方法可以实现这个效果</p> <ol><li>不停地刷新这个直播间，一直刷刷刷刷刷……刷到他来直播为止</li> <li>订阅这个主播，一旦他上线，主播给所有点过他关注的人一个通知，告诉订阅者他上线了（观察者模式）</li> <li>订阅这个主播，一旦他上线，直播平台可以检测到主播上线，直播平台自动发送通知来通知用户（发布订阅模式）</li></ol> <p>显然，正常人都不会选择第一种方式，第一种方式会让我把大量的精力都放在 <strong>“刷新”</strong> 这个操作上，会占用大量的系统资源</p> <p>第二种方式看起来更人性化，这也就是使用了 <strong>观察者模式</strong> 。用户是订阅者，主播是 <strong>观察目标</strong>，每当观察目标 <strong>状态</strong> 发生变化，主播会主动通知用户，用户接收到消息。</p> <p>再来看第三种方式，第三种方式也就是 <strong>发布-订阅模式</strong>。显然第三种方式和第二种唯一的区别在于：用户 和 主播 之间多出了一个 平台 的概念。这个平台就是它和观察者模式区别最大的地方。使用这种模式，主播不再通知用户，转而通知平台，平台再进行转播，通知到用户。</p> <p>乍一看和第二种方法没区别啊？反而多此一举，多出了一个平台的开销，貌似第二种方法更合理一些。</p> <p>方法 2 实现代码：</p> <div class="language- extra-class"><pre class="language-text"><code>class Anchor {
+    constructor() {
+        this.list = []
+    }
+    listen (user) {
+        this.list.push(user)
+    }
+    trigger () {
+        this.list.forEach(user =&gt; user.run.call())
+    }
+}
+
+class User {
+    run () {
+        console.log('主播上线了！')
+    }
+}
+
+let anchor = new Anchor() // 新建主播
+
+let user = new User() // 新建用户
+
+anchor.listen(user) // 添加订阅
+
+setTimeout(() =&gt; {  // 模拟异步触发
+    anchor.trigger() // 触发事件
+}, 3000);
+
+// 3s后：主播上线了！
+</code></pre></div><p><strong>R(Result)</strong>：我们使用了简单的<strong>观察者模式</strong>实现了这个需求</p> <h2 id="发布订阅模式"><a href="#发布订阅模式" class="header-anchor">#</a> 发布订阅模式</h2> <p>这篇文章还没结束。</p> <p>这里先把上文的第三种方法，<strong>发布订阅模式</strong>的代码放这里，下文要用，对比观察者模式的代码来理解</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Platform</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">// 可能存在多个 anchor ，用数组保存</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">addAnchor</span> <span class="token punctuation">(</span><span class="token parameter">anchor</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>list<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>anchor<span class="token punctuation">)</span> <span class="token comment">// 监听主播</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">listen</span> <span class="token punctuation">(</span><span class="token parameter">AnchorName<span class="token punctuation">,</span> user</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>list<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">val</span> <span class="token operator">=&gt;</span> val<span class="token punctuation">.</span>name <span class="token operator">===</span> AnchorName<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>subs<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">trigger</span> <span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>list<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">val</span> <span class="token operator">=&gt;</span> val<span class="token punctuation">.</span>name <span class="token operator">===</span> name<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>subs<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">user</span> <span class="token operator">=&gt;</span> user<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Anchor</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        <span class="token keyword">this</span><span class="token punctuation">.</span>subs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        plantform<span class="token punctuation">.</span><span class="token function">addAnchor</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token comment">// 初始化时平台添加主播</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">online</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        plantform<span class="token punctuation">.</span><span class="token function">trigger</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment">// 上线时通知平台</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+    <span class="token function">run</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'主播上线了！'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 初始化</span>
+<span class="token keyword">let</span> plantform <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Platform</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> anchor <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Anchor</span><span class="token punctuation">(</span><span class="token string">'ctts'</span><span class="token punctuation">)</span> <span class="token comment">// 新建主播</span>
+<span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 新建用户</span>
+
+<span class="token comment">// 开始</span>
+plantform<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token string">'ctts'</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span> <span class="token comment">// 添加订阅</span>
+
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>  <span class="token comment">// 模拟异步触发</span>
+    anchor<span class="token punctuation">.</span><span class="token function">online</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 触发事件</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><p>过了不久，产品又提出了新的想法，我要搞一个 VIP 用户，VIP用户可以第一时间获取到主播上线时间，普通用户会晚一小时通知。（不要在意这个需求多蠢）继续STAR</p> <p><strong>S(Situation)</strong> ：需要新加一个 vip 属性，VIP用户可以第一时间获取到主播上线时间，普通用户会晚一小时通知。</p> <p><strong>T(Target)</strong>：将用户和主播完全解耦，以较低开销实现这个功能</p> <p><strong>A(Action)</strong>：我们有两种方法可以实现这个效果</p> <ol><li>沿用上文的第二种方法，再给用户添加一个 <code>isVIP</code>属性，修改 <strong>主播</strong> 的<code>trigger</code>方法，在中间添加用户属性判断。</li> <li>沿用上文第三种方法，再给用户添加一个 <code>isVIP</code>属性，再通过 <strong>平台</strong> 的<code>trigger</code>方法 添加用户属性判断。</li></ol> <p>这两者从实现上看似没什么区别，但是从 <strong>耦合度</strong> 的角度来说，是天差地别。</p> <p>方法 1 本质上是在修改 主播 这个对象，这样有什么缺点呢？今天有个需求是添加 vip ，明天有个需求是添加性别，后天有个需求是添加年龄，这样 主播 这个类将会越来越庞大，逐渐变得难以理解，并且与 用户 类的耦合度会越来越高，这不符合类与类之间<strong>低耦合</strong>的软件设计规范。</p> <p>方法 2 将修改和操作完全托付给了 平台 这个中间概念，这样 主播 类和用户类基本无需做额外改动，我们未来修改其他逻辑直接去 平台类中修改即可，这样操作的直接结果就是：将 用户类 和 主播类 <strong>完全解耦</strong>。用户类只负责自身的属性管理，主播类只负责自身的属性管理，各司其职，概念更加清晰！</p> <p><strong>R(Result)</strong>：我们使用了发布订阅模式实现了这个需求，并且未来拓展能力更强了！</p> <h2 id="两者区别"><a href="#两者区别" class="header-anchor">#</a> 两者区别</h2> <p>对比以上的两个例子，我们可以总结出两者的一些区别</p> <ol><li><p>最直观的区别，观察者模式多了一个中间者（平台），代码量和复杂度上升</p> <img src="https://s1.ax1x.com/2020/06/06/tgS4MT.png" alt="tgS4MT.png" border="0"> <p>图片来自网络</p></li> <li><p>观察者模式能够（相比第一种方法而言）降低两个类的耦合度，实现 <strong>低耦合</strong> ，发布订阅模式 实现的则是 <strong>完全解耦</strong></p></li> <li><p>发布订阅模式 灵活度 高于观察者模式</p></li></ol></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/18/2020, 5:51:53 PM</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/pages/blogs/Design/状态模式.html">
+        JavaScript设计模式——状态模式
+      </a>
+      →
+    </span></p></div> </main></div></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.edf28d47.js" defer></script><script src="/assets/js/2.4ef6d935.js" defer></script><script src="/assets/js/66.0e57b57e.js" defer></script><script src="/assets/js/5.03abf982.js" defer></script>
+  </body>
+</html>

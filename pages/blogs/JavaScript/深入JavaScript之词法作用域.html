@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>深入JavaScript之词法作用域 | 参天桃树的博客</title>
+    <meta name="description" content="前端学习">
+    <meta name="generator" content="VuePress 1.3.1">
+    <link rel="icon" href="/logo.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/logo.png">
+  <link rel="mask-icon" href="/logo.png" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.25f7d7fa.css" as="style"><link rel="preload" href="/assets/js/app.edf28d47.js" as="script"><link rel="preload" href="/assets/js/2.4ef6d935.js" as="script"><link rel="preload" href="/assets/js/75.83f5aeb6.js" as="script"><link rel="preload" href="/assets/js/5.03abf982.js" as="script"><link rel="prefetch" href="/assets/js/10.e01bd81c.js"><link rel="prefetch" href="/assets/js/11.4afa66d2.js"><link rel="prefetch" href="/assets/js/12.27402237.js"><link rel="prefetch" href="/assets/js/13.4c78e05f.js"><link rel="prefetch" href="/assets/js/14.0e25cfa1.js"><link rel="prefetch" href="/assets/js/15.b57e640d.js"><link rel="prefetch" href="/assets/js/16.d24a6c01.js"><link rel="prefetch" href="/assets/js/17.08807177.js"><link rel="prefetch" href="/assets/js/18.ccd27d89.js"><link rel="prefetch" href="/assets/js/19.77a1c508.js"><link rel="prefetch" href="/assets/js/20.6634559a.js"><link rel="prefetch" href="/assets/js/21.ca3229d4.js"><link rel="prefetch" href="/assets/js/22.034dd950.js"><link rel="prefetch" href="/assets/js/23.5b932710.js"><link rel="prefetch" href="/assets/js/24.7b9be274.js"><link rel="prefetch" href="/assets/js/25.f4d8458a.js"><link rel="prefetch" href="/assets/js/26.15c95386.js"><link rel="prefetch" href="/assets/js/27.8c8ee964.js"><link rel="prefetch" href="/assets/js/28.90fc886a.js"><link rel="prefetch" href="/assets/js/29.20a5644d.js"><link rel="prefetch" href="/assets/js/3.74bfc25e.js"><link rel="prefetch" href="/assets/js/30.f65d833c.js"><link rel="prefetch" href="/assets/js/31.12ac6fa0.js"><link rel="prefetch" href="/assets/js/32.ebd45b60.js"><link rel="prefetch" href="/assets/js/33.98520712.js"><link rel="prefetch" href="/assets/js/34.07f0ffa1.js"><link rel="prefetch" href="/assets/js/35.f1249471.js"><link rel="prefetch" href="/assets/js/36.a6d2b700.js"><link rel="prefetch" href="/assets/js/37.e4e5625c.js"><link rel="prefetch" href="/assets/js/38.3777bcb4.js"><link rel="prefetch" href="/assets/js/39.3e401e37.js"><link rel="prefetch" href="/assets/js/4.426aadd5.js"><link rel="prefetch" href="/assets/js/40.10f0583d.js"><link rel="prefetch" href="/assets/js/41.b396daed.js"><link rel="prefetch" href="/assets/js/42.b765a524.js"><link rel="prefetch" href="/assets/js/43.b86d742f.js"><link rel="prefetch" href="/assets/js/44.4126af4c.js"><link rel="prefetch" href="/assets/js/45.e194d9df.js"><link rel="prefetch" href="/assets/js/46.9d7acdff.js"><link rel="prefetch" href="/assets/js/47.480c56ee.js"><link rel="prefetch" href="/assets/js/48.1597ebb2.js"><link rel="prefetch" href="/assets/js/49.5478b9e5.js"><link rel="prefetch" href="/assets/js/50.313af1c3.js"><link rel="prefetch" href="/assets/js/51.921ab1ab.js"><link rel="prefetch" href="/assets/js/52.f5a9450f.js"><link rel="prefetch" href="/assets/js/53.8f7435f8.js"><link rel="prefetch" href="/assets/js/54.9045b13e.js"><link rel="prefetch" href="/assets/js/55.541a10ac.js"><link rel="prefetch" href="/assets/js/56.4caa35e3.js"><link rel="prefetch" href="/assets/js/57.06fd5ab7.js"><link rel="prefetch" href="/assets/js/58.8d4f9fd7.js"><link rel="prefetch" href="/assets/js/59.4f366807.js"><link rel="prefetch" href="/assets/js/6.70e2acd4.js"><link rel="prefetch" href="/assets/js/60.b1095e74.js"><link rel="prefetch" href="/assets/js/61.8257724b.js"><link rel="prefetch" href="/assets/js/62.ad94bd6f.js"><link rel="prefetch" href="/assets/js/63.c99ba3c8.js"><link rel="prefetch" href="/assets/js/64.b3edfbdb.js"><link rel="prefetch" href="/assets/js/65.0b71e6e9.js"><link rel="prefetch" href="/assets/js/66.0e57b57e.js"><link rel="prefetch" href="/assets/js/67.7e7020f2.js"><link rel="prefetch" href="/assets/js/68.13ac41db.js"><link rel="prefetch" href="/assets/js/69.a9531cba.js"><link rel="prefetch" href="/assets/js/7.f0104c50.js"><link rel="prefetch" href="/assets/js/70.311a23aa.js"><link rel="prefetch" href="/assets/js/71.6ccff4d3.js"><link rel="prefetch" href="/assets/js/72.91e667a0.js"><link rel="prefetch" href="/assets/js/73.46641548.js"><link rel="prefetch" href="/assets/js/74.1f92351e.js"><link rel="prefetch" href="/assets/js/76.f8b2512b.js"><link rel="prefetch" href="/assets/js/77.7f261c27.js"><link rel="prefetch" href="/assets/js/78.1261239b.js"><link rel="prefetch" href="/assets/js/79.50a0eb7b.js"><link rel="prefetch" href="/assets/js/8.8ac9850f.js"><link rel="prefetch" href="/assets/js/80.a7bc59c8.js"><link rel="prefetch" href="/assets/js/81.b54b6ac1.js"><link rel="prefetch" href="/assets/js/82.c78575e0.js"><link rel="prefetch" href="/assets/js/83.bbb61f72.js"><link rel="prefetch" href="/assets/js/84.291ab932.js"><link rel="prefetch" href="/assets/js/85.a88120e1.js"><link rel="prefetch" href="/assets/js/86.8f5ea5c1.js"><link rel="prefetch" href="/assets/js/87.70031702.js"><link rel="prefetch" href="/assets/js/88.0df6111e.js"><link rel="prefetch" href="/assets/js/89.da1becad.js"><link rel="prefetch" href="/assets/js/9.1ee351c7.js"><link rel="prefetch" href="/assets/js/90.ad8d5348.js"><link rel="prefetch" href="/assets/js/91.59c85307.js"><link rel="prefetch" href="/assets/js/92.556598de.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.25f7d7fa.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="global-layout" data-v-1660a4d0><div class="bg" data-v-be1b9d22 data-v-1660a4d0><canvas data-v-be1b9d22></canvas></div> <div class="theme-container test" data-v-1660a4d0><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="参天桃树的博客" class="logo"> <span class="site-name can-hide">参天桃树的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><span class="title">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/blogs/Daily/20210128.html" class="nav-link">
+  日常笔记
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/JavaScript/面试题集合.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/CSS/多行文本省略号.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Vue/手把手教你实现一个移动端canvas签名模块.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Design/观察者模式和发布订阅模式.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  分类
+</a></div><div class="nav-item"><a href="/pages/Share/" class="nav-link">
+  优秀工具分享
+</a></div><div class="nav-item"><a href="/pages/article/" class="nav-link">
+  优秀文章分享
+</a></div><div class="nav-item"><a href="https://github.com/ctts" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><span class="title">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/blogs/Daily/20210128.html" class="nav-link">
+  日常笔记
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/JavaScript/面试题集合.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/CSS/多行文本省略号.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Vue/手把手教你实现一个移动端canvas签名模块.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Design/观察者模式和发布订阅模式.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  分类
+</a></div><div class="nav-item"><a href="/pages/Share/" class="nav-link">
+  优秀工具分享
+</a></div><div class="nav-item"><a href="/pages/article/" class="nav-link">
+  优秀文章分享
+</a></div><div class="nav-item"><a href="https://github.com/ctts" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>JavaScript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/blogs/JavaScript/面试题集合.html" class="sidebar-link">面试题集合</a></li><li><a href="/pages/blogs/JavaScript/网易雷火2020笔试题.html" class="sidebar-link">2020网易雷火笔试题</a></li><li><a href="/pages/blogs/JavaScript/深入JavaScript之词法作用域.html" class="active sidebar-link">深入JavaScript之词法作用域</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/blogs/JavaScript/深入JavaScript之词法作用域.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/JavaScript/深入JavaScript之词法作用域.html#作用域基本概念" class="sidebar-link">作用域基本概念</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/JavaScript/深入JavaScript之词法作用域.html#提升" class="sidebar-link">提升</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/blogs/JavaScript/深入JavaScript之词法作用域.html#let-const" class="sidebar-link">let/const</a></li></ul></li><li class="sidebar-sub-header"><a href="/pages/blogs/JavaScript/深入JavaScript之词法作用域.html#作用域链" class="sidebar-link">作用域链</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/JavaScript/深入JavaScript之词法作用域.html#闭包" class="sidebar-link">闭包</a></li></ul></li><li><a href="/pages/blogs/JavaScript/深入JavaScript之动态作用域.html" class="sidebar-link">深入JavaScript之从ES规范理解动态作用域（this）</a></li><li><a href="/pages/blogs/JavaScript/模拟移动端长按事件.html" class="sidebar-link">移动端长按事件</a></li><li><a href="/pages/blogs/JavaScript/封装axios和cookie.html" class="sidebar-link">封装axios和cookie小笔记</a></li><li><a href="/pages/blogs/JavaScript/定位鼠标点击位置和目标元素相对位置.html" class="sidebar-link">定位鼠标点击位置和目标元素相对位置</a></li><li><a href="/pages/blogs/JavaScript/学会使用async来实现异步编程.html" class="sidebar-link">学会使用async来实现异步编程</a></li><li><a href="/pages/blogs/JavaScript/图片懒加载.html" class="sidebar-link">图片（pdf）懒加载</a></li><li><a href="/pages/blogs/JavaScript/前端实现复制粘贴.html" class="sidebar-link">前端实现复制粘贴</a></li><li><a href="/pages/blogs/JavaScript/Koa学习指南.html" class="sidebar-link">Koa学习指南</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="深入javascript之词法作用域"><a href="#深入javascript之词法作用域" class="header-anchor">#</a> 深入JavaScript之词法作用域</h1> <img src="https://s1.ax1x.com/2020/05/13/Ywd7dg.jpg" alt="Ywd7dg.jpg" border="0"> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <blockquote><p>JavaScript作用域绝对是日常编程中最重要的模块之一，一旦出现问题，会非常隐蔽，如果不理解原理，往往连自己怎么解决的都不知道，用这篇文章带你去真正理解JavaScript词法作用域的概念，迈出深入JavaScript的第一步。</p></blockquote> <p>我是练习时长两年半的前端实习生（误）小c，看看今天有什么博客好看的，词法作用域？什么玩意，这种东西写代码又用不到，懒得看。ctrl+f4再见。</p> <p>开始快乐的代码时间，快春招了，看看笔试题吧。</p> <p>shift！又是作用域题，绕来绕去的。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token string">&quot;global scope&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">scope1</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token string">&quot;scope1&quot;</span>
+    <span class="token keyword">return</span> scope
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">checkscope</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token string">&quot;scope2&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">f</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> scope<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">scope1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> f<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> newcheck <span class="token operator">=</span> <span class="token function">checkscope</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">newcheck</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><img src="https://s1.ax1x.com/2020/03/15/83kbRA.jpg" alt="83kbRA.jpg" border="0"> <p><s>错误</s> 答案是:<code>scope2 scope2 global scope</code> 吗？</p> <p>控制台输出：</p> <div class="language- extra-class"><pre class="language-text"><code>scope2
+scope1
+scope2
+</code></pre></div><p>打得好，我认输。</p> <p>默默打开了之前关闭的作用域博客。</p> <h2 id="作用域基本概念"><a href="#作用域基本概念" class="header-anchor">#</a> 作用域基本概念</h2> <p>当JavaScript开始运行时，就会产生一个<strong>全局作用域</strong>。</p> <p>顾名思义，全局作用域就是在 JavaScript 运行时无论哪里都能够访问到的作用域。当代码运行遇到一个当前作用域不存在的变量时，就会按照<strong>作用域链</strong>（后文提及）依次向上查询，最后查询到全局作用域，若还不存在，则创建一个变量（严格模式下报错）。</p> <p>每当创建一个函数，就会产生一个<strong>函数作用域</strong>。</p> <p>函数作用域是最常见的作用域，在函数内部声明的变量<strong>通常情况下</strong>只能在函数内部的整个范围内使用，函数外部无法获取。</p> <p>在ES6之前，JavaScript不存在原生<strong>块级作用域</strong>，在ES6补充了<code>let</code>和<code>const</code>，块级作用域的意思就是在这一代码块中，都能够访问块级作用域中定义的变量。</p> <p>静态作用域是JavaScript中相对比较容易理解的一块，我们只需要分析上下文，注意提升</p> <blockquote><p>小c：“就这？这些东西谁不知道？再给你一分钟时间！”</p></blockquote> <p>小东西那么心急，我们慢慢由浅入深。</p> <h2 id="提升"><a href="#提升" class="header-anchor">#</a> 提升</h2> <p>提升其实是很常见的事情，我们在代码中随处可见，但是往往忽略了它。</p> <div class="language- extra-class"><pre class="language-text"><code>console.log(a) //undefined
+var a = 1
+
+test() // 1
+
+function test(){ console.log(1) }
+test = function(){ console.log(2) }
+
+</code></pre></div><p>上面的题目如果不知道提升，就会有三个问题：</p> <ol><li>为什么a不报错，并且输出了<code>undefined</code></li> <li>为什么能够在<code>test()</code>还未定义之前就调用，并且不报错</li> <li>为什么<code>test()</code>输出1，而不是2</li></ol> <p>回答这两个问题之前，我们从根源探寻一下为什么出现<code>变量提升</code>和<code>函数提升</code>这种现象。</p> <blockquote><p>引用自《你不知道的JavaScript》</p> <p>尽管通常将JavaScript归类为“动态”或“解释执行”语言，单事实上它是一门编译语言。但与传统的编译语言不同的是，<strong>它不是提前编译的</strong>，编译结果也不能再分布式系统中进行移植。</p></blockquote> <p>JavaScript引擎在执行代码之前，需要对代码进行编译，或者说：<strong>解释代码</strong>。</p> <p>这时候作用域的作用就出来了。当JavaScript引擎解析时，会前往变量所在作用域查询。为了能够让引擎尽早确认当前作用域是否存在该变量，所以对所有变量进行了提升。</p> <p>以上面的题目为例：</p> <p>我（引擎）：</p> <p>我要拿快递<code>a</code>，立刻！我赶时间！<code>console.log(a)</code></p> <p>快递员（作用域）：</p> <p>好嘞，我帮你先看看清单（提升），哦，我这儿有，你稍等，我给你找找在哪<code>var a</code></p> <p>我们可以发现，提升，<strong>仅仅只是将声明提升，而并没有将赋值提升！</strong></p> <hr> <p>以上讲解了变量提升的概念，但是我们可以探讨一下变量提升的意义。（为什么需要变量提升）</p> <p>首先，最重要的：<strong>提高性能</strong></p> <p>这很好理解，就如同快递员的例子，如果快递员一件一件去寻找快递，如果确实到货了还好，如果还没到，那么我就白白多等了很长时间。</p> <p>同理，如果一开始编译的时候就查询整个作用域，只是为了确定<code>a</code>是否存在，这效率无疑是非常低效的。</p> <p>其次，历史原因（无官方证实）：众所周知，JavaScript曾经只是个脚本语言，脚本语言就是要<strong>容易上手，容错率高</strong>，随便写写都能执行，只要结果是对的即可。</p> <p>虽然在现在来看，貌似起到了反作用，增加了理解成本，但是在当前人均技术不佳的情况下，无疑是有些意义的。</p> <hr> <p>现在再回来回答上面题目</p> <p>1.由于变量提升，关于a的代码等同于以下代码</p> <div class="language- extra-class"><pre class="language-text"><code>var a
+console.log(a)
+a = 1
+</code></pre></div><p>2.函数提升，同上，test的代码等同于以下代码</p> <div class="language- extra-class"><pre class="language-text"><code>function test(){ console.log(1) }
+test() // 1
+test = function(){ console.log(2) }
+</code></pre></div><p>这里可能有人会问了：“不是只提升声明吗？为什么不是等同于以下的代码？为什么函数整个都被提升了？”</p> <div class="language- extra-class"><pre class="language-text"><code>// 这是错误的！！！
+var test
+test()
+test = function(){ console.log(1) }
+test = function(){ console.log(2) }
+</code></pre></div><p>这个问题其实需要你知道什么是<strong>函数声明</strong>，什么是<strong>函数表达式</strong>，这里简单说一下</p> <blockquote><p>以<code>function</code>开头的叫做函数声明</p> <p>以等号形式的叫函数表达式。</p></blockquote> <p>再次强调：函数提升只提升<strong>所有声明</strong>！</p> <p>3.这里涉及到了提升的一个原则：<strong>函数优先原则</strong></p> <p><code>test = function(){ console.log(2) }</code>在这句代码中，这是一个函数表达式，test不是一个函数，而是一个变量，由于函数优先的原则</p> <p>我们需要注意的是，在发生相同的声明时，会以函数声明优先提升！</p> <blockquote><p>小c：“嗯……有点东西了，再看一会”</p></blockquote> <p>开始有点信息量了……热身结束。</p> <h3 id="let-const"><a href="#let-const" class="header-anchor">#</a> let/const</h3> <p>之前提到了 JavaScript 中<strong>提升</strong>和<strong>块级作用域</strong>的概念，但现在看来这些概念都是和我们日常开发的习惯相违背的，JavaScript也意识到了这些问题，开始做出了改变，在ES6中提出了<strong>let/const</strong>命令。</p> <p>一句话概括这两者的概念。</p> <p><strong>let 声明变量，const声明常量，两者能够形成块级作用域，在作用域内不允许重复申明或提前使用（暂时性死区），并且两者不存在提升！</strong></p> <p>两个操作符就解决了这两大难题！</p> <blockquote><p>tip1: 在未来开发中，一般情况下不再使用<code>var</code>命令。能使用<code>const</code>就不使用<code>let</code></p> <p>tip2：是否存在提升其实存在争议（后文提及），但是为了方便理解可以直接那么认为</p></blockquote> <p>前半句很好理解，重点是后半句 <strong>暂时性死区（Temporal Dead Zone），并且两者不存在提升！</strong></p> <blockquote><p>小c:&quot;暂时性死区是个什么玩意儿？&quot;</p></blockquote> <img src="https://s1.ax1x.com/2020/03/16/8GJw5Q.jpg" alt="8GJw5Q.jpg" border="0" width="100"> <div class="language-javascript extra-class"><pre class="language-javascript"><code>a <span class="token operator">=</span> <span class="token number">5</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token comment">// Uncaught ReferenceError: Cannot access 'a' before initialization  at &lt;anonymous&gt;:1:3</span>
+<span class="token keyword">let</span> a
+</code></pre></div><p>若使用<code>var</code>定义是可以正常执行输出的，但是<code>let</code>不行,也就是说，在<strong>当前作用域中</strong>，从作用域的开始直到<code>let a</code>前，都形成了一个&quot;死区&quot;,在其中使用变量都会报错！</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 暂时性死区开始</span>
+a <span class="token operator">=</span> <span class="token number">5</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token comment">// 暂时性死区结束</span>
+<span class="token keyword">let</span> a
+<span class="token comment">// 形成了块级作用域（以下都是）</span>
+</code></pre></div><p>那么暂时性死区是如何形成的呢？</p> <blockquote><p>引用自<code>ECMA-262中13.3.1的NOTE</code></p> <p>let and const declarations define variables that are scoped to the running execution context’s LexicalEnvironment. The variables are created when their containing Lexical Environment is instantiated but may not be accessed in any way until the variable’s LexicalBinding is evaluated. A variable defined by a LexicalBinding with an Initializer is assigned the value of its Initializer’s AssignmentExpression when the LexicalBinding is evaluated, not when the variable is created. If a LexicalBinding in a let declaration does not have an Initializer the variable is assigned the value undefined when the LexicalBinding is evaluated.</p></blockquote> <p>个人翻译（比较粗糙，英语过关的同学就别看啦）：</p> <p><code>let</code>和<code>const</code>能够为正在执行的上下文中的词法作用域申明变量。变量是在实例化词法环境是创建的，但是无法真正访问该变量，直到到达它所在的词法作用域。**当运行到赋值表达式时，静态绑定和初始化器才会初始化赋值表达式，而不是在创建变量时就会赋值。**如果 let 声明中对静态绑定没有初始化，则会为其分配 undefined 。</p> <blockquote><p>小c：“什么意思？我看不懂…”</p></blockquote> <p>换个意思说：</p> <p>当我们使用<code>var</code>时，在创建时就会赋值一个undefined，而let和const不同，它会将创建和赋值分为两个操作。也就是编译器一开始也和<code>var</code>一样会识别<code>let/const</code>，<strong>并提升</strong>（发生争议的原因），<strong>但是,没有为其进行赋值操作，连undefined都没有！</strong>，也就是<strong>undeclared</strong>状态。所以在之前的代码中使用会报错。</p> <blockquote><p>小c：“怎么又来一个undeclared？这个我也不知道！”</p></blockquote> <img src="https://s1.ax1x.com/2020/03/16/8GJw5Q.jpg" alt="8GJw5Q.jpg" border="0" width="100"> <div class="language- extra-class"><pre class="language-text"><code>console.log(a)  // 此时a为undeclared状态,也就是未申明，控制台会发生报错，并停止执行代码
+var b // 申明了b
+console.log(b) // 此时状态为undefined，会输出undefined
+</code></pre></div><p><strong>虽然控制台统一报错都为undefined，但是切记undeclared与undefined并不相同！</strong></p> <p>理解了上面这段代码之后，再回去读一遍，我相信你可以理解了！</p> <p>JavaScript还有其他模拟块级作用域的方法，此处主要为理解块级作用域的概念，不再详述。</p> <h2 id="作用域链"><a href="#作用域链" class="header-anchor">#</a> 作用域链</h2> <p>作用域链其实很好理解，简单来说就是<strong>套娃</strong></p> <img src="https://s1.ax1x.com/2020/03/16/8GLnpT.jpg" alt="8GLnpT.jpg" border="0" width="200"> <p>上图其实很好地解释了作用域链的形态。</p> <p>当编译器在<strong>当前作用域</strong>下没有找到某变量的定义时，会随着<strong>定义时的作用域链</strong>依次向上查询，直到找到<strong>最近的</strong>变量申明，若到达最外层依然没找到，则报错。</p> <p>特别要注意的是：当前作用域，定义时的作用域链。</p> <p>讲到这里我们终于快接触到本文的核心——词法（<strong>静态</strong>）作用域。</p> <p>老规矩，一句话概括词法作用域：<strong>函数的作用域在函数定义时就已经确定了！</strong></p> <blockquote><p>《JavaScript权威指南》：</p> <p>JavaScript 是基于词法作用域的语言：通过阅读包含变量定义在内的数行源码就能知道变量的作用域。</p></blockquote> <p>这句话字面意思很简单，但是真的看到代码，很多人往往会忘记这句。来个例子</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token string">&quot;global scope&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">scope1</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token string">&quot;scope1&quot;</span>
+    <span class="token keyword">return</span> scope
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">checkscope</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token string">&quot;scope2&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">f</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> scope<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">scope1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> f<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> newcheck <span class="token operator">=</span> <span class="token function">checkscope</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">newcheck</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><img src="https://s1.ax1x.com/2020/03/15/83kbRA.jpg" alt="83kbRA.jpg" border="0"> <div class="language- extra-class"><pre class="language-text"><code>scope2
+scope1
+scope2
+</code></pre></div><p>如果答对了，并且真的知道为什么了，基本就掌握了静态作用域和作用域链了。</p> <p>如果没答对，再默读两遍<strong>函数的作用域在函数定义时就已经确定了！</strong>，并回去看看上面的知识吧。</p> <h2 id="闭包"><a href="#闭包" class="header-anchor">#</a> 闭包</h2> <p>如果你真的<strong>理解</strong>了静态作用域，那么你已经理解了<strong>闭包</strong>的概念了！</p> <p>网上的解释真的是把闭包解释的天花乱坠，乱七八糟。我以前为了理解闭包翻遍了网上博客，实在是没什么作用，但是当你换一个角度，<strong>从词法作用域的角度去理解闭包</strong>，那么一切将会迎刃而解！</p> <blockquote><p>小c：“哦?那么神奇吗？闭包的概念我也听过，但是确实不太懂为什么能这样。”</p></blockquote> <p>好吧，我们还是从闭包的基本概念入手，以免一些同学根本没听说过闭包。</p> <blockquote><p>《JavaScript高级程序设计》：</p> <p>闭包：<strong>指有权访问另一个函数作用域中的变量的函数</strong>。创建闭包的常见方式，就是在一个函数内部创建另一个函数。</p></blockquote> <p>带着这段话重新写一下上面的题。</p> <div class="language- extra-class"><pre class="language-text"><code>var scope = &quot;global scope&quot;;
+function scope1 (){
+    var scope = &quot;scope1&quot;
+    return scope
+}
+function checkscope () {
+    var scope = &quot;scope2&quot;;
+    function f () {
+        return scope;
+    }
+    console.log(f()) // scope2
+    console.log(scope1())  //scope1,这是一个闭包
+    return f;
+}
+const newcheck = checkscope()
+console.log(newcheck()) // scope2,这也是一个闭包
+</code></pre></div><p>由于词法作用域，我们成功地在<code>checkscope</code>函数中打印出了<code>scope1</code>函数中的值！这不就是闭包吗？</p> <p>原本在最外层作用域下我们无法获取到<code>checkscope</code>中的变量，但是我们却通过此法作用域获取成功了！这不就是闭包吗？</p> <p>没错，理解了词法作用域后，闭包就是那么简单。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/18/2020, 5:51:53 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pages/blogs/JavaScript/网易雷火2020笔试题.html" class="prev">
+        2020网易雷火笔试题
+      </a></span> <span class="next"><a href="/pages/blogs/JavaScript/深入JavaScript之动态作用域.html">
+        深入JavaScript之从ES规范理解动态作用域（this）
+      </a>
+      →
+    </span></p></div> </main></div></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.edf28d47.js" defer></script><script src="/assets/js/2.4ef6d935.js" defer></script><script src="/assets/js/75.83f5aeb6.js" defer></script><script src="/assets/js/5.03abf982.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>移动端长按事件 | 参天桃树的博客</title>
+    <meta name="description" content="前端学习">
+    <meta name="generator" content="VuePress 1.3.1">
+    <link rel="icon" href="/logo.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/logo.png">
+  <link rel="mask-icon" href="/logo.png" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.25f7d7fa.css" as="style"><link rel="preload" href="/assets/js/app.edf28d47.js" as="script"><link rel="preload" href="/assets/js/2.4ef6d935.js" as="script"><link rel="preload" href="/assets/js/73.46641548.js" as="script"><link rel="preload" href="/assets/js/5.03abf982.js" as="script"><link rel="prefetch" href="/assets/js/10.e01bd81c.js"><link rel="prefetch" href="/assets/js/11.4afa66d2.js"><link rel="prefetch" href="/assets/js/12.27402237.js"><link rel="prefetch" href="/assets/js/13.4c78e05f.js"><link rel="prefetch" href="/assets/js/14.0e25cfa1.js"><link rel="prefetch" href="/assets/js/15.b57e640d.js"><link rel="prefetch" href="/assets/js/16.d24a6c01.js"><link rel="prefetch" href="/assets/js/17.08807177.js"><link rel="prefetch" href="/assets/js/18.ccd27d89.js"><link rel="prefetch" href="/assets/js/19.77a1c508.js"><link rel="prefetch" href="/assets/js/20.6634559a.js"><link rel="prefetch" href="/assets/js/21.ca3229d4.js"><link rel="prefetch" href="/assets/js/22.034dd950.js"><link rel="prefetch" href="/assets/js/23.5b932710.js"><link rel="prefetch" href="/assets/js/24.7b9be274.js"><link rel="prefetch" href="/assets/js/25.f4d8458a.js"><link rel="prefetch" href="/assets/js/26.15c95386.js"><link rel="prefetch" href="/assets/js/27.8c8ee964.js"><link rel="prefetch" href="/assets/js/28.90fc886a.js"><link rel="prefetch" href="/assets/js/29.20a5644d.js"><link rel="prefetch" href="/assets/js/3.74bfc25e.js"><link rel="prefetch" href="/assets/js/30.f65d833c.js"><link rel="prefetch" href="/assets/js/31.12ac6fa0.js"><link rel="prefetch" href="/assets/js/32.ebd45b60.js"><link rel="prefetch" href="/assets/js/33.98520712.js"><link rel="prefetch" href="/assets/js/34.07f0ffa1.js"><link rel="prefetch" href="/assets/js/35.f1249471.js"><link rel="prefetch" href="/assets/js/36.a6d2b700.js"><link rel="prefetch" href="/assets/js/37.e4e5625c.js"><link rel="prefetch" href="/assets/js/38.3777bcb4.js"><link rel="prefetch" href="/assets/js/39.3e401e37.js"><link rel="prefetch" href="/assets/js/4.426aadd5.js"><link rel="prefetch" href="/assets/js/40.10f0583d.js"><link rel="prefetch" href="/assets/js/41.b396daed.js"><link rel="prefetch" href="/assets/js/42.b765a524.js"><link rel="prefetch" href="/assets/js/43.b86d742f.js"><link rel="prefetch" href="/assets/js/44.4126af4c.js"><link rel="prefetch" href="/assets/js/45.e194d9df.js"><link rel="prefetch" href="/assets/js/46.9d7acdff.js"><link rel="prefetch" href="/assets/js/47.480c56ee.js"><link rel="prefetch" href="/assets/js/48.1597ebb2.js"><link rel="prefetch" href="/assets/js/49.5478b9e5.js"><link rel="prefetch" href="/assets/js/50.313af1c3.js"><link rel="prefetch" href="/assets/js/51.921ab1ab.js"><link rel="prefetch" href="/assets/js/52.f5a9450f.js"><link rel="prefetch" href="/assets/js/53.8f7435f8.js"><link rel="prefetch" href="/assets/js/54.9045b13e.js"><link rel="prefetch" href="/assets/js/55.541a10ac.js"><link rel="prefetch" href="/assets/js/56.4caa35e3.js"><link rel="prefetch" href="/assets/js/57.06fd5ab7.js"><link rel="prefetch" href="/assets/js/58.8d4f9fd7.js"><link rel="prefetch" href="/assets/js/59.4f366807.js"><link rel="prefetch" href="/assets/js/6.70e2acd4.js"><link rel="prefetch" href="/assets/js/60.b1095e74.js"><link rel="prefetch" href="/assets/js/61.8257724b.js"><link rel="prefetch" href="/assets/js/62.ad94bd6f.js"><link rel="prefetch" href="/assets/js/63.c99ba3c8.js"><link rel="prefetch" href="/assets/js/64.b3edfbdb.js"><link rel="prefetch" href="/assets/js/65.0b71e6e9.js"><link rel="prefetch" href="/assets/js/66.0e57b57e.js"><link rel="prefetch" href="/assets/js/67.7e7020f2.js"><link rel="prefetch" href="/assets/js/68.13ac41db.js"><link rel="prefetch" href="/assets/js/69.a9531cba.js"><link rel="prefetch" href="/assets/js/7.f0104c50.js"><link rel="prefetch" href="/assets/js/70.311a23aa.js"><link rel="prefetch" href="/assets/js/71.6ccff4d3.js"><link rel="prefetch" href="/assets/js/72.91e667a0.js"><link rel="prefetch" href="/assets/js/74.1f92351e.js"><link rel="prefetch" href="/assets/js/75.83f5aeb6.js"><link rel="prefetch" href="/assets/js/76.f8b2512b.js"><link rel="prefetch" href="/assets/js/77.7f261c27.js"><link rel="prefetch" href="/assets/js/78.1261239b.js"><link rel="prefetch" href="/assets/js/79.50a0eb7b.js"><link rel="prefetch" href="/assets/js/8.8ac9850f.js"><link rel="prefetch" href="/assets/js/80.a7bc59c8.js"><link rel="prefetch" href="/assets/js/81.b54b6ac1.js"><link rel="prefetch" href="/assets/js/82.c78575e0.js"><link rel="prefetch" href="/assets/js/83.bbb61f72.js"><link rel="prefetch" href="/assets/js/84.291ab932.js"><link rel="prefetch" href="/assets/js/85.a88120e1.js"><link rel="prefetch" href="/assets/js/86.8f5ea5c1.js"><link rel="prefetch" href="/assets/js/87.70031702.js"><link rel="prefetch" href="/assets/js/88.0df6111e.js"><link rel="prefetch" href="/assets/js/89.da1becad.js"><link rel="prefetch" href="/assets/js/9.1ee351c7.js"><link rel="prefetch" href="/assets/js/90.ad8d5348.js"><link rel="prefetch" href="/assets/js/91.59c85307.js"><link rel="prefetch" href="/assets/js/92.556598de.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.25f7d7fa.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="global-layout" data-v-1660a4d0><div class="bg" data-v-be1b9d22 data-v-1660a4d0><canvas data-v-be1b9d22></canvas></div> <div class="theme-container test" data-v-1660a4d0><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="参天桃树的博客" class="logo"> <span class="site-name can-hide">参天桃树的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><span class="title">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/blogs/Daily/20210128.html" class="nav-link">
+  日常笔记
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/JavaScript/面试题集合.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/CSS/多行文本省略号.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Vue/手把手教你实现一个移动端canvas签名模块.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Design/观察者模式和发布订阅模式.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  分类
+</a></div><div class="nav-item"><a href="/pages/Share/" class="nav-link">
+  优秀工具分享
+</a></div><div class="nav-item"><a href="/pages/article/" class="nav-link">
+  优秀文章分享
+</a></div><div class="nav-item"><a href="https://github.com/ctts" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><span class="title">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/blogs/Daily/20210128.html" class="nav-link">
+  日常笔记
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/JavaScript/面试题集合.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/CSS/多行文本省略号.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Vue/手把手教你实现一个移动端canvas签名模块.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Design/观察者模式和发布订阅模式.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  分类
+</a></div><div class="nav-item"><a href="/pages/Share/" class="nav-link">
+  优秀工具分享
+</a></div><div class="nav-item"><a href="/pages/article/" class="nav-link">
+  优秀文章分享
+</a></div><div class="nav-item"><a href="https://github.com/ctts" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>JavaScript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/blogs/JavaScript/面试题集合.html" class="sidebar-link">面试题集合</a></li><li><a href="/pages/blogs/JavaScript/网易雷火2020笔试题.html" class="sidebar-link">2020网易雷火笔试题</a></li><li><a href="/pages/blogs/JavaScript/深入JavaScript之词法作用域.html" class="sidebar-link">深入JavaScript之词法作用域</a></li><li><a href="/pages/blogs/JavaScript/深入JavaScript之动态作用域.html" class="sidebar-link">深入JavaScript之从ES规范理解动态作用域（this）</a></li><li><a href="/pages/blogs/JavaScript/模拟移动端长按事件.html" class="active sidebar-link">移动端长按事件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/blogs/JavaScript/模拟移动端长按事件.html#思路" class="sidebar-link">思路</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/JavaScript/模拟移动端长按事件.html#兼容click" class="sidebar-link">兼容click</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/JavaScript/模拟移动端长按事件.html#添加回调函数" class="sidebar-link">添加回调函数</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/JavaScript/模拟移动端长按事件.html#vue实现" class="sidebar-link">Vue实现</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/JavaScript/模拟移动端长按事件.html#总结" class="sidebar-link">总结</a></li></ul></li><li><a href="/pages/blogs/JavaScript/封装axios和cookie.html" class="sidebar-link">封装axios和cookie小笔记</a></li><li><a href="/pages/blogs/JavaScript/定位鼠标点击位置和目标元素相对位置.html" class="sidebar-link">定位鼠标点击位置和目标元素相对位置</a></li><li><a href="/pages/blogs/JavaScript/学会使用async来实现异步编程.html" class="sidebar-link">学会使用async来实现异步编程</a></li><li><a href="/pages/blogs/JavaScript/图片懒加载.html" class="sidebar-link">图片（pdf）懒加载</a></li><li><a href="/pages/blogs/JavaScript/前端实现复制粘贴.html" class="sidebar-link">前端实现复制粘贴</a></li><li><a href="/pages/blogs/JavaScript/Koa学习指南.html" class="sidebar-link">Koa学习指南</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="移动端的长按事件"><a href="#移动端的长按事件" class="header-anchor">#</a> 移动端的长按事件</h1> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>众所周知，移动端没有原生的长按事件，我们只能自己模拟一个长按事件。使用 click 肯定不行的，因为他在鼠标抬起时才触发。既然是移动端，我们就可以想到适用 <code>touchstart</code> 和 <code>touchend</code>  事件来尝试一下。</p></div> <h2 id="思路"><a href="#思路" class="header-anchor">#</a> 思路</h2> <p>先介绍一下  <code>touchstart</code> 和 <code>touchend</code>  ，这两个 api 是移动端特有的事件，他们表达的意思是<strong>开始触摸时</strong>和 <strong>结束触摸时</strong>。</p> <p>还有一个 <code>touchmove</code> 事件，但是这个事件和长按需求关系不是很大，但是也可以带上。</p> <p>既然是长按事件，那么我们就需要区别他和普通点击事件的区别：<strong>鼠标抬起的时间不同</strong>。这就是模拟长按的核心，那么很容易我们就可以想到使用 <code>settimeout</code> 来记录时间。</p> <p>我们定义一个计时器，当开始点击时开始计时，若事件超过设定的事件，则判断是长按事件，当鼠标松开时清除计时器。</p> <p>按照这个思路，很容易写出以下代码</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>移动端js实现长按事件longpress<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token function">  longPress</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">800</span><span class="token punctuation">)</span>
+  <span class="token comment">// js模拟长按</span>
+  <span class="token keyword">function</span><span class="token function"> longPress</span><span class="token punctuation">(</span><span class="token parameter">dom<span class="token punctuation">,</span> time</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果传入的不是dom，直接返回</span>
+    <span class="token keyword">if</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token operator">!</span>dom <span class="token operator">||</span> dom<span class="token punctuation">.</span>nodeType <span class="token operator">!==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span>
+    <span class="token keyword">let</span> timer <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token comment">// 监听鼠标按下时事件</span>
+    dom<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchstart'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      timer <span class="token operator">=</span><span class="token function"> setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token parameter"> </span><span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'longpress'</span><span class="token punctuation">)</span>
+        timer <span class="token operator">=</span> <span class="token keyword">null</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> time<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">// 监听鼠标松开时事件</span>
+    dom<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchend'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token function">      clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span>
+      timer <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><p>效果如下：</p> <p><img src="en-resource://database/2014:1" alt="a814e6133dc862bf3a5d76d1d5d40c35.gif"></p> <p>这样一个简单的长按事件就实现了。</p> <h2 id="兼容click"><a href="#兼容click" class="header-anchor">#</a> 兼容click</h2> <p>上面的方法有个问题，那就是普通的点击事件没有兼容，这样我还需要另外写一个 click 事件绑定，而且长按时会带上 click 事件。这不是我们想要的。所以我们需要对代码进行处理。</p> <p>对代码进行分析，当我们松开按钮时，若时间未达到时，timer 的值还未被清空，所以我们只要在 touchend事件中判断 timer 是否为空即可分辨是普通的点击事件还是长按事件了。</p> <p>不难写出如下代码：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token comment">// js模拟长按</span>
+  <span class="token keyword">function</span><span class="token function"> longPress</span><span class="token punctuation">(</span><span class="token parameter">dom<span class="token punctuation">,</span> time</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果传入的不是dom，直接返回</span>
+    <span class="token keyword">if</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token operator">!</span>dom <span class="token operator">||</span> dom<span class="token punctuation">.</span>nodeType <span class="token operator">!==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span>
+    <span class="token keyword">let</span> timer <span class="token operator">=</span> <span class="token keyword">null</span>
+    dom<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchstart'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      timer <span class="token operator">=</span><span class="token function"> setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token parameter"> </span><span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'longpress'</span><span class="token punctuation">)</span>
+        timer <span class="token operator">=</span> <span class="token keyword">null</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> time<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    dom<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchend'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token parameter">timer</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+<span class="token function">      clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span>
+      timer <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><p>效果如下：
+<img src="en-resource://database/2015:1" alt="9ff09c835c9030521802ad3b4a8399a5.gif"></p> <h2 id="添加回调函数"><a href="#添加回调函数" class="header-anchor">#</a> 添加回调函数</h2> <p>目前，我们只实现了显示一段话而已，我们需要自定义的回调函数，只需要在调用时传入即可，在自己想要执行的地方执行。注意执行回调函数之前需要先判断回调函数是否是一个 function 。顺便我们也把 <code>touchmove</code>事件带上。</p> <p>完整代码：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 调用，以对象的形式传入回调，只需要传入需要的回调方法</span>
+<span class="token function">longPress</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token function-variable function">longPressStart</span><span class="token operator">:</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token parameter"> </span><span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'longPressStart'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">click</span><span class="token operator">:</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token parameter"> </span><span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">longPressMove</span><span class="token operator">:</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token parameter"> </span><span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'longPressMove'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">longPressEnd</span><span class="token operator">:</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token parameter"> </span><span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'longPressEnd'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  
+  <span class="token comment">// js模拟长按</span>
+  <span class="token keyword">function</span><span class="token function"> longPress</span><span class="token punctuation">(</span><span class="token parameter">dom<span class="token punctuation">,</span> time<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    click<span class="token punctuation">,</span>
+    longPressStart<span class="token punctuation">,</span>
+    longPressMove<span class="token punctuation">,</span>
+    longPressEnd
+  <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果传入的不是dom，直接返回</span>
+    <span class="token keyword">if</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token operator">!</span>dom <span class="token operator">||</span> dom<span class="token punctuation">.</span>nodeType <span class="token operator">!==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span>
+    <span class="token comment">// 初始化timer</span>
+    <span class="token keyword">let</span> timer <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token comment">// 监听开始触摸</span>
+    dom<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchstart'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      timer <span class="token operator">=</span><span class="token function"> setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token parameter"> </span><span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token keyword">typeof</span> longPress <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 长按回调函数</span>
+<span class="token function">          longPressStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        timer <span class="token operator">=</span> <span class="token keyword">null</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> time<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">// 监听移动</span>
+    dom<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchmove'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token function">      clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span>
+      timer <span class="token operator">=</span> <span class="token keyword">null</span>
+      <span class="token keyword">if</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token keyword">typeof</span> longPressMove <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 移动回调</span>
+<span class="token function">        longPressMove</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">// 监听结束触摸</span>
+    dom<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchend'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token parameter">timer</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token keyword">typeof</span> click <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 点击回调函数</span>
+<span class="token function">          click</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 长按结束时触发</span>
+        <span class="token keyword">if</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token keyword">typeof</span> longPressEnd <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 移动回调</span>
+<span class="token function">          longPressEnd</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+<span class="token function">      clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span>
+      timer <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><p>效果如下：
+<img src="en-resource://database/2016:1" alt="c89b0a19a8bc80ad186dc47146c04413.gif"></p> <h2 id="vue实现"><a href="#vue实现" class="header-anchor">#</a> Vue实现</h2> <p>知道了原生js的写法的话，vue更是不在话下了。只需要给组件绑定三个监听事件即可。直接放代码。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>
+      <span class="token attr-name">@touchstart</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>touchStart<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">@touchmove</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>touchMove<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">@touchend</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>touchEnd<span class="token punctuation">&quot;</span></span>
+<span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 点击开始</span>
+<span class="token function">    touchStart </span><span class="token punctuation">(</span><span class="token parameter">longPress</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>timer <span class="token operator">=</span><span class="token function"> setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token parameter"> </span><span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token keyword">typeof</span> longPressStart <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 长按回调函数</span>
+<span class="token function">          longPress</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>timer <span class="token operator">=</span> <span class="token keyword">null</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>time<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 长按时移动</span>
+<span class="token function">    touchMove </span><span class="token punctuation">(</span><span class="token parameter">longPressMove</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token function">      clearTimeout</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>timer<span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>timer <span class="token operator">=</span> <span class="token keyword">null</span>
+      <span class="token keyword">if</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token keyword">typeof</span> longPressMove <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 移动回调</span>
+<span class="token function">        longPressMove</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 结束触摸</span>
+<span class="token function">    touchEnd </span><span class="token punctuation">(</span><span class="token parameter">longPressEnd<span class="token punctuation">,</span> click</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token parameter"><span class="token keyword">this</span><span class="token punctuation">.</span>timer</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token keyword">typeof</span> click <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 点击回调函数</span>
+<span class="token function">          click</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 长按结束时触发</span>
+        <span class="token keyword">if</span><span class="token function"> </span><span class="token punctuation">(</span><span class="token keyword">typeof</span> longPressEnd <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token function">          longPressEnd</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+<span class="token function">      clearTimeout</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>timer<span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>timer <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+
+</code></pre></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>这是一个比较小的功能，实现思路却也不算简单，重点是方法拓展性要强，不能只局限于长按事件，还需要兼容click事件。</p> <p>锻炼逻辑能力还不错。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">5/13/2020, 11:26:24 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pages/blogs/JavaScript/深入JavaScript之动态作用域.html" class="prev">
+        深入JavaScript之从ES规范理解动态作用域（this）
+      </a></span> <span class="next"><a href="/pages/blogs/JavaScript/封装axios和cookie.html">
+        封装axios和cookie小笔记
+      </a>
+      →
+    </span></p></div> </main></div></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.edf28d47.js" defer></script><script src="/assets/js/2.4ef6d935.js" defer></script><script src="/assets/js/73.46641548.js" defer></script><script src="/assets/js/5.03abf982.js" defer></script>
+  </body>
+</html>

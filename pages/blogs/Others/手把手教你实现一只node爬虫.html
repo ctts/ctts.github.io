@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>手把手教你实现一只node爬虫（豆瓣top250） | 参天桃树的博客</title>
+    <meta name="description" content="前端学习">
+    <meta name="generator" content="VuePress 1.3.1">
+    <link rel="icon" href="/logo.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/logo.png">
+  <link rel="mask-icon" href="/logo.png" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.25f7d7fa.css" as="style"><link rel="preload" href="/assets/js/app.edf28d47.js" as="script"><link rel="preload" href="/assets/js/2.4ef6d935.js" as="script"><link rel="preload" href="/assets/js/84.291ab932.js" as="script"><link rel="preload" href="/assets/js/5.03abf982.js" as="script"><link rel="prefetch" href="/assets/js/10.e01bd81c.js"><link rel="prefetch" href="/assets/js/11.4afa66d2.js"><link rel="prefetch" href="/assets/js/12.27402237.js"><link rel="prefetch" href="/assets/js/13.4c78e05f.js"><link rel="prefetch" href="/assets/js/14.0e25cfa1.js"><link rel="prefetch" href="/assets/js/15.b57e640d.js"><link rel="prefetch" href="/assets/js/16.d24a6c01.js"><link rel="prefetch" href="/assets/js/17.08807177.js"><link rel="prefetch" href="/assets/js/18.ccd27d89.js"><link rel="prefetch" href="/assets/js/19.77a1c508.js"><link rel="prefetch" href="/assets/js/20.6634559a.js"><link rel="prefetch" href="/assets/js/21.ca3229d4.js"><link rel="prefetch" href="/assets/js/22.034dd950.js"><link rel="prefetch" href="/assets/js/23.5b932710.js"><link rel="prefetch" href="/assets/js/24.7b9be274.js"><link rel="prefetch" href="/assets/js/25.f4d8458a.js"><link rel="prefetch" href="/assets/js/26.15c95386.js"><link rel="prefetch" href="/assets/js/27.8c8ee964.js"><link rel="prefetch" href="/assets/js/28.90fc886a.js"><link rel="prefetch" href="/assets/js/29.20a5644d.js"><link rel="prefetch" href="/assets/js/3.74bfc25e.js"><link rel="prefetch" href="/assets/js/30.f65d833c.js"><link rel="prefetch" href="/assets/js/31.12ac6fa0.js"><link rel="prefetch" href="/assets/js/32.ebd45b60.js"><link rel="prefetch" href="/assets/js/33.98520712.js"><link rel="prefetch" href="/assets/js/34.07f0ffa1.js"><link rel="prefetch" href="/assets/js/35.f1249471.js"><link rel="prefetch" href="/assets/js/36.a6d2b700.js"><link rel="prefetch" href="/assets/js/37.e4e5625c.js"><link rel="prefetch" href="/assets/js/38.3777bcb4.js"><link rel="prefetch" href="/assets/js/39.3e401e37.js"><link rel="prefetch" href="/assets/js/4.426aadd5.js"><link rel="prefetch" href="/assets/js/40.10f0583d.js"><link rel="prefetch" href="/assets/js/41.b396daed.js"><link rel="prefetch" href="/assets/js/42.b765a524.js"><link rel="prefetch" href="/assets/js/43.b86d742f.js"><link rel="prefetch" href="/assets/js/44.4126af4c.js"><link rel="prefetch" href="/assets/js/45.e194d9df.js"><link rel="prefetch" href="/assets/js/46.9d7acdff.js"><link rel="prefetch" href="/assets/js/47.480c56ee.js"><link rel="prefetch" href="/assets/js/48.1597ebb2.js"><link rel="prefetch" href="/assets/js/49.5478b9e5.js"><link rel="prefetch" href="/assets/js/50.313af1c3.js"><link rel="prefetch" href="/assets/js/51.921ab1ab.js"><link rel="prefetch" href="/assets/js/52.f5a9450f.js"><link rel="prefetch" href="/assets/js/53.8f7435f8.js"><link rel="prefetch" href="/assets/js/54.9045b13e.js"><link rel="prefetch" href="/assets/js/55.541a10ac.js"><link rel="prefetch" href="/assets/js/56.4caa35e3.js"><link rel="prefetch" href="/assets/js/57.06fd5ab7.js"><link rel="prefetch" href="/assets/js/58.8d4f9fd7.js"><link rel="prefetch" href="/assets/js/59.4f366807.js"><link rel="prefetch" href="/assets/js/6.70e2acd4.js"><link rel="prefetch" href="/assets/js/60.b1095e74.js"><link rel="prefetch" href="/assets/js/61.8257724b.js"><link rel="prefetch" href="/assets/js/62.ad94bd6f.js"><link rel="prefetch" href="/assets/js/63.c99ba3c8.js"><link rel="prefetch" href="/assets/js/64.b3edfbdb.js"><link rel="prefetch" href="/assets/js/65.0b71e6e9.js"><link rel="prefetch" href="/assets/js/66.0e57b57e.js"><link rel="prefetch" href="/assets/js/67.7e7020f2.js"><link rel="prefetch" href="/assets/js/68.13ac41db.js"><link rel="prefetch" href="/assets/js/69.a9531cba.js"><link rel="prefetch" href="/assets/js/7.f0104c50.js"><link rel="prefetch" href="/assets/js/70.311a23aa.js"><link rel="prefetch" href="/assets/js/71.6ccff4d3.js"><link rel="prefetch" href="/assets/js/72.91e667a0.js"><link rel="prefetch" href="/assets/js/73.46641548.js"><link rel="prefetch" href="/assets/js/74.1f92351e.js"><link rel="prefetch" href="/assets/js/75.83f5aeb6.js"><link rel="prefetch" href="/assets/js/76.f8b2512b.js"><link rel="prefetch" href="/assets/js/77.7f261c27.js"><link rel="prefetch" href="/assets/js/78.1261239b.js"><link rel="prefetch" href="/assets/js/79.50a0eb7b.js"><link rel="prefetch" href="/assets/js/8.8ac9850f.js"><link rel="prefetch" href="/assets/js/80.a7bc59c8.js"><link rel="prefetch" href="/assets/js/81.b54b6ac1.js"><link rel="prefetch" href="/assets/js/82.c78575e0.js"><link rel="prefetch" href="/assets/js/83.bbb61f72.js"><link rel="prefetch" href="/assets/js/85.a88120e1.js"><link rel="prefetch" href="/assets/js/86.8f5ea5c1.js"><link rel="prefetch" href="/assets/js/87.70031702.js"><link rel="prefetch" href="/assets/js/88.0df6111e.js"><link rel="prefetch" href="/assets/js/89.da1becad.js"><link rel="prefetch" href="/assets/js/9.1ee351c7.js"><link rel="prefetch" href="/assets/js/90.ad8d5348.js"><link rel="prefetch" href="/assets/js/91.59c85307.js"><link rel="prefetch" href="/assets/js/92.556598de.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.25f7d7fa.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="global-layout" data-v-1660a4d0><div class="bg" data-v-be1b9d22 data-v-1660a4d0><canvas data-v-be1b9d22></canvas></div> <div class="theme-container test" data-v-1660a4d0><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="参天桃树的博客" class="logo"> <span class="site-name can-hide">参天桃树的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><span class="title">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/blogs/Daily/20210128.html" class="nav-link">
+  日常笔记
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/JavaScript/面试题集合.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/CSS/多行文本省略号.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Vue/手把手教你实现一个移动端canvas签名模块.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Design/观察者模式和发布订阅模式.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  分类
+</a></div><div class="nav-item"><a href="/pages/Share/" class="nav-link">
+  优秀工具分享
+</a></div><div class="nav-item"><a href="/pages/article/" class="nav-link">
+  优秀文章分享
+</a></div><div class="nav-item"><a href="https://github.com/ctts" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><span class="title">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/blogs/Daily/20210128.html" class="nav-link">
+  日常笔记
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/JavaScript/面试题集合.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/CSS/多行文本省略号.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Vue/手把手教你实现一个移动端canvas签名模块.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Design/观察者模式和发布订阅模式.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  分类
+</a></div><div class="nav-item"><a href="/pages/Share/" class="nav-link">
+  优秀工具分享
+</a></div><div class="nav-item"><a href="/pages/article/" class="nav-link">
+  优秀文章分享
+</a></div><div class="nav-item"><a href="https://github.com/ctts" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>其他</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html" class="active sidebar-link">手把手教你实现一只node爬虫（豆瓣top250）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html#爬虫是什么" class="sidebar-link">爬虫是什么</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html#准备" class="sidebar-link">准备</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html#开始制作" class="sidebar-link">开始制作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html#向目标页面发起请求" class="sidebar-link">向目标页面发起请求</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html#解析页面数据，获取我们想要的内容" class="sidebar-link">解析页面数据，获取我们想要的内容</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html#基本逻辑完成" class="sidebar-link">基本逻辑完成</a></li></ul></li><li class="sidebar-sub-header"><a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html#分页" class="sidebar-link">分页</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html#完整代码" class="sidebar-link">完整代码</a></li></ul></li><li><a href="/pages/blogs/Others/小鹤双拼学习.html" class="sidebar-link">小鹤双拼学习</a></li><li><a href="/pages/blogs/Others/前端必须掌握的http.html" class="sidebar-link">前端必须要知道的http知识.</a></li><li><a href="/pages/blogs/Others/前端工程师先是一个工程师，然后才是一个前端.html" class="sidebar-link">前端工程师先是一个工程师，然后才是一个前端</a></li><li><a href="/pages/blogs/Others/企业git基本操作.html" class="sidebar-link">企业git基本操作</a></li><li><a href="/pages/blogs/Others/webpack设置本地代理，测试环境下跨域.html" class="sidebar-link">webpack设置本地代理，测试环境下跨域</a></li><li><a href="/pages/blogs/Others/vscode用户代码片段.html" class="sidebar-link">VSCode用户代码片段</a></li><li><a href="/pages/blogs/Others/apidoc使用教程.html" class="sidebar-link">apiDoc使用教程</a></li><li><a href="/pages/blogs/Others/IOS无法播放mp4视频.html" class="sidebar-link">IOS无法播放mp4视频</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="手把手教你实现一只node爬虫（豆瓣top250）"><a href="#手把手教你实现一只node爬虫（豆瓣top250）" class="header-anchor">#</a> 手把手教你实现一只node爬虫（豆瓣top250）</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>爬虫是近两年比较火的概念了，学会爬虫可以实现很多很有 cool 的功能，我觉得非常的“极客”，比如我们可以去使用爬虫去找一些有意思的图片，有意思的资讯，寻找我们想要的信息。我是前端工程师，js是我们最拿手的语言，所以我们今天就来用node.js实现一只简单的表层网页（Surface Web）爬虫。</p></div> <h2 id="爬虫是什么"><a href="#爬虫是什么" class="header-anchor">#</a> 爬虫是什么</h2> <p>我们先来确认一下爬虫到底是什么，是如何运作的，运作的原理是什么。</p> <p>简单来说，爬虫就是<strong>一段自动化程序</strong>，原理是服务端<strong>向目标url发送http请求，目标网页返回页面上的数据信息，后端通过一些特殊手段解析返回的页面信息的数据（如正则表达式）</strong>，从而找到自己想要的数据，保存到本地中。</p> <h2 id="准备"><a href="#准备" class="header-anchor">#</a> 准备</h2> <p>http协议基础知识</p> <p>node环境 + cheerio + superagent</p> <div class="language- extra-class"><pre class="language-text"><code>npm install cheerio
+npm install superagent
+</code></pre></div><p><strong>cheerio</strong>：可以将返回的目标页面信息像jQuery一样灵活自由地操作，帮助我们提取信息。（毕竟我们真的很讨厌正则表达式）</p> <p><strong>superagent</strong>： 帮助服务端向目标页面发起请求，其实也可以使用node自带的http模块，但是superagent更方便我们使用。</p> <p>目标页面：豆瓣电影top250 https://movie.douban.com/top250</p> <p>我们要获取到豆瓣电影的标题和目标页面url，因为是教程级别的小爬虫，所以只爬出小部分的内容。</p> <h2 id="开始制作"><a href="#开始制作" class="header-anchor">#</a> 开始制作</h2> <h3 id="向目标页面发起请求"><a href="#向目标页面发起请求" class="header-anchor">#</a> 向目标页面发起请求</h3> <div class="language- extra-class"><pre class="language-text"><code>function getHTML() {
+    let promise = new Promise((resolve, reject) =&gt; {
+    	// 通过superagent向页面发起请求
+        superagent
+            .get('https://movie.douban.com/top250?start=0&amp;filter=')
+            .end((err, res) =&gt; {
+                if (!err) {
+                    // 如果成功获取到网页内容， 返回网页数据
+                    resolve(res)
+                } else {
+                    reject(err)
+                }
+            })
+    })
+    return promise
+}
+</code></pre></div><p>通过superagent向页面发起请求，若请求成功，返回页面的html代码，待到下一步进行解析。</p> <h3 id="解析页面数据，获取我们想要的内容"><a href="#解析页面数据，获取我们想要的内容" class="header-anchor">#</a> 解析页面数据，获取我们想要的内容</h3> <p>首先，<strong>打开chrome控制台，分析页面结构，找到信息所在节点</strong>。</p> <p>……说得那么高大上，其实就是看看网页代码</p> <p><img src="https://i.imgur.com/2mpJufH.gif" alt=""></p> <p>开始编码</p> <p>学习使用cheerio，</p> <div class="language- extra-class"><pre class="language-text"><code>let $ = cheerio.load(res.text);
+</code></pre></div><p>多么熟悉的$符号……接下来应该就不用多说了吧（学习完了，滑稽）</p> <div class="language- extra-class"><pre class="language-text"><code>// 传入找到的html
+function analysisHTML(res) {
+    let promise = new Promise((resolve, reject) =&gt; {
+        let $ = cheerio.load(res.text)
+        let hotData = []
+        $('.item').find('.info').find('.hd').each((index, element) =&gt; {
+            let content = $(element).find('a')
+            let infoURL = content.attr('href')
+            let infoContent = content.find('.title').first().text()
+            let hot = {
+                infoContent,
+                infoURL,
+            }
+            hotData.push(hot)
+        })
+        resolve(hotData)
+    })
+
+    return promise
+}
+</code></pre></div><h3 id="基本逻辑完成"><a href="#基本逻辑完成" class="header-anchor">#</a> 基本逻辑完成</h3> <p>爬虫的基本逻辑就是这样，把它们串联起来,打印一下结果看看。</p> <div class="language- extra-class"><pre class="language-text"><code>async function spider() {
+    const html = await getHTML()
+    const result = await analysisHTML(html)
+    result.then(res =&gt; console.log(res))
+    return result
+}
+</code></pre></div><p>那么来运行一下看看能不能行呢？</p> <p><img src="https://i.imgur.com/bNBdJYq.png" alt=""></p> <p>成功得爬取了豆瓣的top250</p> <h2 id="分页"><a href="#分页" class="header-anchor">#</a> 分页</h2> <p>等等，上面说的不是top250吗？我们才抓了25个啊？</p> <p>对哦，接下来就要说说如何处理分页。</p> <p>正常情况下，分页之间都是有关联的，我们要前往下一页，<strong>换句话说不就是去往下一页的url进行相同操作</strong>吗？</p> <p>有了思路，我们来看看top250的url有什么关联。</p> <p>这是第一页的url：https://movie.douban.com/top250?start=0&amp;filter=</p> <p>这是第二页的url: https://movie.douban.com/top250?start=25&amp;filter=</p> <p>这是第三页的url: https://movie.douban.com/top250?start=50&amp;filter=</p> <p>这是第十页的url: https://movie.douban.com/top250?start=225&amp;filter=</p> <p>很容易就能发现，只是start字段后面的数值等于（页码-1）*25</p> <p>很简单，只需要用正则表达式定位到start字段后面之后执行替换操作，或者更简单的，只需动态改变字符串内容即可。</p> <p>改造一下上面的代码，将固定的url改为动态的，将data改为全局变量，</p> <p>运行一下</p> <p><img src="https://i.imgur.com/84BmI0V.png" alt=""></p> <p>一个简单的成功了！</p> <h2 id="完整代码"><a href="#完整代码" class="header-anchor">#</a> 完整代码</h2> <div class="language- extra-class"><pre class="language-text"><code>const superagent = require('superagent')
+const cheerio = require('cheerio')
+
+let hotData = []
+
+function getHTML(url) {
+    let promise = new Promise((resolve, reject) =&gt; {
+        superagent
+            .get(url)
+            .end((err, res) =&gt; {
+                if (!err) {
+                    // 如果成功获取到网页内容， 返回网页数据
+                    resolve(res)
+                } else {
+                    console.log(err)
+                    reject(err)
+                }
+            })
+    })
+    return promise
+}
+
+function analysisHTML(res) {
+    let promise = new Promise((resolve, reject) =&gt; {
+        let $ = cheerio.load(res.text)
+        $('.item').find('.info').find('.hd').each((index, element) =&gt; {
+            let content = $(element).find('a')
+            let infoURL = content.attr('href')
+            let infoContent = content.find('.title').first().text()
+            let hot = {
+                infoContent,
+                infoURL,
+            }
+            hotData.push(hot)
+        })
+        resolve(hotData)
+    })
+
+    return promise
+}
+
+async function spider() {
+    for (let i = 0; i &lt; 10; i++) {
+        let url = `https://movie.douban.com/top250?start=0&amp;filter=`
+        const html = await getHTML(url)
+        await analysisHTML(html)
+    }
+    console.log(hotData)
+    return hotData
+}
+
+module.exports = spider
+</code></pre></div><p>这只是最基础的爬虫，其中没有涉及到反反爬虫，所以用来入门还是不错的，学习了这章之后可以自己尝试着去爬一爬小说漫画之类的，但是<strong>切勿抓取非法信息</strong>！</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">5/13/2020, 11:26:24 PM</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/pages/blogs/Others/小鹤双拼学习.html">
+        小鹤双拼学习
+      </a>
+      →
+    </span></p></div> </main></div></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.edf28d47.js" defer></script><script src="/assets/js/2.4ef6d935.js" defer></script><script src="/assets/js/84.291ab932.js" defer></script><script src="/assets/js/5.03abf982.js" defer></script>
+  </body>
+</html>

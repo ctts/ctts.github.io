@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue事件监听 | 参天桃树的博客</title>
+    <meta name="description" content="前端学习">
+    <meta name="generator" content="VuePress 1.3.1">
+    <link rel="icon" href="/logo.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/logo.png">
+  <link rel="mask-icon" href="/logo.png" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.25f7d7fa.css" as="style"><link rel="preload" href="/assets/js/app.edf28d47.js" as="script"><link rel="preload" href="/assets/js/2.4ef6d935.js" as="script"><link rel="preload" href="/assets/js/85.a88120e1.js" as="script"><link rel="preload" href="/assets/js/5.03abf982.js" as="script"><link rel="prefetch" href="/assets/js/10.e01bd81c.js"><link rel="prefetch" href="/assets/js/11.4afa66d2.js"><link rel="prefetch" href="/assets/js/12.27402237.js"><link rel="prefetch" href="/assets/js/13.4c78e05f.js"><link rel="prefetch" href="/assets/js/14.0e25cfa1.js"><link rel="prefetch" href="/assets/js/15.b57e640d.js"><link rel="prefetch" href="/assets/js/16.d24a6c01.js"><link rel="prefetch" href="/assets/js/17.08807177.js"><link rel="prefetch" href="/assets/js/18.ccd27d89.js"><link rel="prefetch" href="/assets/js/19.77a1c508.js"><link rel="prefetch" href="/assets/js/20.6634559a.js"><link rel="prefetch" href="/assets/js/21.ca3229d4.js"><link rel="prefetch" href="/assets/js/22.034dd950.js"><link rel="prefetch" href="/assets/js/23.5b932710.js"><link rel="prefetch" href="/assets/js/24.7b9be274.js"><link rel="prefetch" href="/assets/js/25.f4d8458a.js"><link rel="prefetch" href="/assets/js/26.15c95386.js"><link rel="prefetch" href="/assets/js/27.8c8ee964.js"><link rel="prefetch" href="/assets/js/28.90fc886a.js"><link rel="prefetch" href="/assets/js/29.20a5644d.js"><link rel="prefetch" href="/assets/js/3.74bfc25e.js"><link rel="prefetch" href="/assets/js/30.f65d833c.js"><link rel="prefetch" href="/assets/js/31.12ac6fa0.js"><link rel="prefetch" href="/assets/js/32.ebd45b60.js"><link rel="prefetch" href="/assets/js/33.98520712.js"><link rel="prefetch" href="/assets/js/34.07f0ffa1.js"><link rel="prefetch" href="/assets/js/35.f1249471.js"><link rel="prefetch" href="/assets/js/36.a6d2b700.js"><link rel="prefetch" href="/assets/js/37.e4e5625c.js"><link rel="prefetch" href="/assets/js/38.3777bcb4.js"><link rel="prefetch" href="/assets/js/39.3e401e37.js"><link rel="prefetch" href="/assets/js/4.426aadd5.js"><link rel="prefetch" href="/assets/js/40.10f0583d.js"><link rel="prefetch" href="/assets/js/41.b396daed.js"><link rel="prefetch" href="/assets/js/42.b765a524.js"><link rel="prefetch" href="/assets/js/43.b86d742f.js"><link rel="prefetch" href="/assets/js/44.4126af4c.js"><link rel="prefetch" href="/assets/js/45.e194d9df.js"><link rel="prefetch" href="/assets/js/46.9d7acdff.js"><link rel="prefetch" href="/assets/js/47.480c56ee.js"><link rel="prefetch" href="/assets/js/48.1597ebb2.js"><link rel="prefetch" href="/assets/js/49.5478b9e5.js"><link rel="prefetch" href="/assets/js/50.313af1c3.js"><link rel="prefetch" href="/assets/js/51.921ab1ab.js"><link rel="prefetch" href="/assets/js/52.f5a9450f.js"><link rel="prefetch" href="/assets/js/53.8f7435f8.js"><link rel="prefetch" href="/assets/js/54.9045b13e.js"><link rel="prefetch" href="/assets/js/55.541a10ac.js"><link rel="prefetch" href="/assets/js/56.4caa35e3.js"><link rel="prefetch" href="/assets/js/57.06fd5ab7.js"><link rel="prefetch" href="/assets/js/58.8d4f9fd7.js"><link rel="prefetch" href="/assets/js/59.4f366807.js"><link rel="prefetch" href="/assets/js/6.70e2acd4.js"><link rel="prefetch" href="/assets/js/60.b1095e74.js"><link rel="prefetch" href="/assets/js/61.8257724b.js"><link rel="prefetch" href="/assets/js/62.ad94bd6f.js"><link rel="prefetch" href="/assets/js/63.c99ba3c8.js"><link rel="prefetch" href="/assets/js/64.b3edfbdb.js"><link rel="prefetch" href="/assets/js/65.0b71e6e9.js"><link rel="prefetch" href="/assets/js/66.0e57b57e.js"><link rel="prefetch" href="/assets/js/67.7e7020f2.js"><link rel="prefetch" href="/assets/js/68.13ac41db.js"><link rel="prefetch" href="/assets/js/69.a9531cba.js"><link rel="prefetch" href="/assets/js/7.f0104c50.js"><link rel="prefetch" href="/assets/js/70.311a23aa.js"><link rel="prefetch" href="/assets/js/71.6ccff4d3.js"><link rel="prefetch" href="/assets/js/72.91e667a0.js"><link rel="prefetch" href="/assets/js/73.46641548.js"><link rel="prefetch" href="/assets/js/74.1f92351e.js"><link rel="prefetch" href="/assets/js/75.83f5aeb6.js"><link rel="prefetch" href="/assets/js/76.f8b2512b.js"><link rel="prefetch" href="/assets/js/77.7f261c27.js"><link rel="prefetch" href="/assets/js/78.1261239b.js"><link rel="prefetch" href="/assets/js/79.50a0eb7b.js"><link rel="prefetch" href="/assets/js/8.8ac9850f.js"><link rel="prefetch" href="/assets/js/80.a7bc59c8.js"><link rel="prefetch" href="/assets/js/81.b54b6ac1.js"><link rel="prefetch" href="/assets/js/82.c78575e0.js"><link rel="prefetch" href="/assets/js/83.bbb61f72.js"><link rel="prefetch" href="/assets/js/84.291ab932.js"><link rel="prefetch" href="/assets/js/86.8f5ea5c1.js"><link rel="prefetch" href="/assets/js/87.70031702.js"><link rel="prefetch" href="/assets/js/88.0df6111e.js"><link rel="prefetch" href="/assets/js/89.da1becad.js"><link rel="prefetch" href="/assets/js/9.1ee351c7.js"><link rel="prefetch" href="/assets/js/90.ad8d5348.js"><link rel="prefetch" href="/assets/js/91.59c85307.js"><link rel="prefetch" href="/assets/js/92.556598de.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.25f7d7fa.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="global-layout" data-v-1660a4d0><div class="bg" data-v-be1b9d22 data-v-1660a4d0><canvas data-v-be1b9d22></canvas></div> <div class="theme-container test" data-v-1660a4d0><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="参天桃树的博客" class="logo"> <span class="site-name can-hide">参天桃树的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><span class="title">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/blogs/Daily/20210128.html" class="nav-link">
+  日常笔记
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/JavaScript/面试题集合.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/CSS/多行文本省略号.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Vue/手把手教你实现一个移动端canvas签名模块.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Design/观察者模式和发布订阅模式.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  分类
+</a></div><div class="nav-item"><a href="/pages/Share/" class="nav-link">
+  优秀工具分享
+</a></div><div class="nav-item"><a href="/pages/article/" class="nav-link">
+  优秀文章分享
+</a></div><div class="nav-item"><a href="https://github.com/ctts" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><span class="title">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/blogs/Daily/20210128.html" class="nav-link">
+  日常笔记
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/JavaScript/面试题集合.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/CSS/多行文本省略号.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Vue/手把手教你实现一个移动端canvas签名模块.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Design/观察者模式和发布订阅模式.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogs/Others/手把手教你实现一只node爬虫.html" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  分类
+</a></div><div class="nav-item"><a href="/pages/Share/" class="nav-link">
+  优秀工具分享
+</a></div><div class="nav-item"><a href="/pages/article/" class="nav-link">
+  优秀文章分享
+</a></div><div class="nav-item"><a href="https://github.com/ctts" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Vue</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/blogs/Vue/手把手教你实现一个移动端canvas签名模块.html" class="sidebar-link">手把手教你实现一个移动端canvas签名模块</a></li><li><a href="/pages/blogs/Vue/vue.sync指令的用法.html" class="sidebar-link">vue.sync 指令的用法</a></li><li><a href="/pages/blogs/Vue/vue-video-player使用文档.html" class="sidebar-link">Vue-Video-Player</a></li><li><a href="/pages/blogs/Vue/Vue源码分析之Vue响应式对象.html" class="sidebar-link">Vue源码分析之Vue响应式对象</a></li><li><a href="/pages/blogs/Vue/Vue源码分析之Vue依赖收集和派发更新.html" class="sidebar-link">Vue源码分析之Vue依赖收集和派发更新</a></li><li><a href="/pages/blogs/Vue/Vue事件监听.html" class="active sidebar-link">Vue事件监听</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/blogs/Vue/Vue事件监听.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/Vue/Vue事件监听.html#问题一：在父组件中定义的方法不触发" class="sidebar-link">问题一：在父组件中定义的方法不触发</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/Vue/Vue事件监听.html#问题二：父组件和子组件同时触发了事件，谁先触发" class="sidebar-link">问题二：父组件和子组件同时触发了事件，谁先触发</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/Vue/Vue事件监听.html#所有事件修饰符" class="sidebar-link">所有事件修饰符</a></li><li class="sidebar-sub-header"><a href="/pages/blogs/Vue/Vue事件监听.html#感悟" class="sidebar-link">感悟</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue事件监听"><a href="#vue事件监听" class="header-anchor">#</a> Vue事件监听</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <blockquote><p>当你遇到问题时，官方文档才是你解决问题最好的地方</p></blockquote> <h2 id="问题一：在父组件中定义的方法不触发"><a href="#问题一：在父组件中定义的方法不触发" class="header-anchor">#</a> 问题一：在父组件中定义的方法不触发</h2> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;sub @click=&quot;handleClick&quot;&gt;&lt;/sub&gt;  //此处的点击事件不触发
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  name: 'father',
+  data () {
+    return {
+      num: 0
+    }
+  },
+  methods: {
+    handleClick () {
+      this.num++
+    }
+  },
+}
+&lt;/script&gt;
+</code></pre></div><p>查阅官方文档：</p> <blockquote><p>你可能有很多次想要在一个组件的根元素上直接监听一个原生事件。这时，你可以使用 v-on 的 .native 修饰符</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code> &lt;sub @click.native=&quot;handleClick&quot;&gt;&lt;/sub&gt;  
+ 
+</code></pre></div><p>这样就可以正确的监听原生事件了。（此处的原生事件指的是父组件上的方法）</p> <p><strong>注意</strong>：.native不使用于类似<code>&lt;input&gt;</code>的元素。</p> <h2 id="问题二：父组件和子组件同时触发了事件，谁先触发"><a href="#问题二：父组件和子组件同时触发了事件，谁先触发" class="header-anchor">#</a> 问题二：父组件和子组件同时触发了事件，谁先触发</h2> <p>我还没有发现触发的顺序是怎么规定的……有时候子组件快有时候父组件快，但是我们可以用事件修饰符来规定哪个组件先触发。</p> <p>查阅官方文档：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;!-- 添加事件监听器时使用事件捕获模式 --&gt;
+&lt;!-- 即元素自身触发的事件先在此处理，然后才交由内部元素进行处理 --&gt;
+&lt;div v-on:click.capture=&quot;doThis&quot;&gt;...&lt;/div&gt;
+
+&lt;!-- 只当在 event.target 是当前元素自身时触发处理函数 --&gt;
+&lt;!-- 即事件不是从内部元素触发的 --&gt;
+&lt;div v-on:click.self=&quot;doThat&quot;&gt;...&lt;/div&gt;
+</code></pre></div><p>使用这两个方法中的一个就可以自己指定一个规则了。这个问题很隐蔽，可能只有遇到过一次才能记忆深刻吧。</p> <h2 id="所有事件修饰符"><a href="#所有事件修饰符" class="header-anchor">#</a> 所有事件修饰符</h2> <p>摘抄自Vue官方文档  https://cn.vuejs.org/v2/guide/events.html</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;!-- 阻止单击事件继续传播 --&gt;
+&lt;a v-on:click.stop=&quot;doThis&quot;&gt;&lt;/a&gt;
+
+&lt;!-- 提交事件不再重载页面 --&gt;
+&lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;&lt;/form&gt;
+
+&lt;!-- 修饰符可以串联 --&gt;
+&lt;a v-on:click.stop.prevent=&quot;doThat&quot;&gt;&lt;/a&gt;
+
+&lt;!-- 只有修饰符 --&gt;
+&lt;form v-on:submit.prevent&gt;&lt;/form&gt;
+
+&lt;!-- 添加事件监听器时使用事件捕获模式 --&gt;
+&lt;!-- 即元素自身触发的事件先在此处理，然后才交由内部元素进行处理 --&gt;
+&lt;div v-on:click.capture=&quot;doThis&quot;&gt;...&lt;/div&gt;
+
+&lt;!-- 只当在 event.target 是当前元素自身时触发处理函数 --&gt;
+&lt;!-- 即事件不是从内部元素触发的 --&gt;
+&lt;div v-on:click.self=&quot;doThat&quot;&gt;...&lt;/div&gt;
+
+&lt;!-- 点击事件将只会触发一次 --&gt;
+&lt;a v-on:click.once=&quot;doThis&quot;&gt;&lt;/a&gt;
+
+&lt;!-- 滚动事件的默认行为 (即滚动行为) 将会立即触发 --&gt;
+&lt;!-- 而不会等待 `onScroll` 完成  --&gt;
+&lt;!-- 这其中包含 `event.preventDefault()` 的情况 --&gt;
+&lt;div v-on:scroll.passive=&quot;onScroll&quot;&gt;...&lt;/div&gt;
+</code></pre></div><h2 id="感悟"><a href="#感悟" class="header-anchor">#</a> 感悟</h2> <p>官方文档！官方文档！官方文档！很重要！要反复看！不一定要记住，但是一定要知道有那么个东西！</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">5/13/2020, 11:26:24 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pages/blogs/Vue/Vue源码分析之Vue依赖收集和派发更新.html" class="prev">
+        Vue源码分析之Vue依赖收集和派发更新
+      </a></span> <!----></p></div> </main></div></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.edf28d47.js" defer></script><script src="/assets/js/2.4ef6d935.js" defer></script><script src="/assets/js/85.a88120e1.js" defer></script><script src="/assets/js/5.03abf982.js" defer></script>
+  </body>
+</html>
